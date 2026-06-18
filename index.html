@@ -170,7 +170,7 @@
                     </div>
                     
                     <div class="hero-visual">
-                        <img src="https://images.pexels.com/photos/6804606/pexels-photo-6804606.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Bureau informatique moderne" class="hero-image" loading="eager">
+                        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Bureau informatique moderne" class="hero-image" loading="eager">
                         <div class="hero-float-card card-1">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
@@ -315,11 +315,21 @@
                     <p>Choisissez la formule qui correspond à votre entreprise. Tous nos contrats incluent un engagement résiliable.</p>
                 </div>
                 
-                <div class="pricing-grid">
+                <!-- Toggle Solo/Multi -->
+                <div class="pricing-toggle">
+                    <span class="toggle-label" id="label-solo">Solo</span>
+                    <label class="switch">
+                        <input type="checkbox" id="pricing-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label" id="label-multi">Multi</span>
+                </div>
+                
+                <div class="pricing-grid" id="pricing-solo">
                     <!-- Solo Pricing -->
-                    <div class="pricing-card">
+                    <div class="pricing-card" data-plan="essentiel">
                         <div class="pricing-header">
-                            <h3>Essentiel Solo</h3>
+                            <h3>Essentiel</h3>
                             <p>1 utilisateur</p>
                         </div>
                         <div class="pricing-price">
@@ -352,13 +362,13 @@
                                 Intervention à distance
                             </li>
                         </ul>
-                        <a href="#contact" class="btn btn-outline full-width">Choisir Solo</a>
+                        <a href="#contact" class="btn btn-outline full-width">Choisir</a>
                     </div>
                     
-                    <div class="pricing-card featured">
+                    <div class="pricing-card featured" data-plan="confort">
                         <div class="pricing-badge">Plus populaire</div>
                         <div class="pricing-header">
-                            <h3>Confort Solo</h3>
+                            <h3>Confort</h3>
                             <p>1 utilisateur</p>
                         </div>
                         <div class="pricing-price">
@@ -391,12 +401,12 @@
                                 Rapport mensuel
                             </li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary full-width">Choisir Solo</a>
+                        <a href="#contact" class="btn btn-primary full-width">Choisir</a>
                     </div>
                     
-                    <div class="pricing-card">
+                    <div class="pricing-card" data-plan="premium">
                         <div class="pricing-header">
-                            <h3>Premium Solo</h3>
+                            <h3>Premium</h3>
                             <p>1 utilisateur</p>
                         </div>
                         <div class="pricing-price">
@@ -429,21 +439,15 @@
                                 Formation utilisateurs
                             </li>
                         </ul>
-                        <a href="#contact" class="btn btn-outline full-width">Choisir Solo</a>
+                        <a href="#contact" class="btn btn-outline full-width">Choisir</a>
                     </div>
                 </div>
                 
-                <div class="pricing-grid" style="margin-top: 40px;">
-                    <div class="pricing-section-title">
-                        <h3>Multi-utilisateurs (2-10 postes)</h3>
-                    </div>
-                </div>
-                
-                <div class="pricing-grid">
+                <div class="pricing-grid" id="pricing-multi" style="display: none;">
                     <!-- Multi Pricing -->
-                    <div class="pricing-card">
+                    <div class="pricing-card" data-plan="essentiel">
                         <div class="pricing-header">
-                            <h3>Essentiel Multi</h3>
+                            <h3>Essentiel</h3>
                             <p>2-10 utilisateurs</p>
                         </div>
                         <div class="pricing-price">
@@ -476,13 +480,13 @@
                                 Intervention sur site (1h/trim)
                             </li>
                         </ul>
-                        <a href="#contact" class="btn btn-outline full-width">Choisir Multi</a>
+                        <a href="#contact" class="btn btn-outline full-width">Choisir</a>
                     </div>
                     
-                    <div class="pricing-card featured">
+                    <div class="pricing-card featured" data-plan="confort">
                         <div class="pricing-badge">Plus populaire</div>
                         <div class="pricing-header">
-                            <h3>Confort Multi</h3>
+                            <h3>Confort</h3>
                             <p>2-10 utilisateurs</p>
                         </div>
                         <div class="pricing-price">
@@ -515,12 +519,12 @@
                                 Rapport mensuel
                             </li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary full-width">Choisir Multi</a>
+                        <a href="#contact" class="btn btn-primary full-width">Choisir</a>
                     </div>
                     
-                    <div class="pricing-card">
+                    <div class="pricing-card" data-plan="premium">
                         <div class="pricing-header">
-                            <h3>Premium Multi</h3>
+                            <h3>Premium</h3>
                             <p>2-10 utilisateurs</p>
                         </div>
                         <div class="pricing-price">
@@ -553,7 +557,7 @@
                                 Formation utilisateurs
                             </li>
                         </ul>
-                        <a href="#contact" class="btn btn-outline full-width">Choisir Multi</a>
+                        <a href="#contact" class="btn btn-outline full-width">Choisir</a>
                     </div>
                 </div>
                 

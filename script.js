@@ -5,6 +5,34 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Pricing Toggle Solo/Multi
+    const pricingToggle = document.getElementById('pricing-toggle');
+    const pricingSolo = document.getElementById('pricing-solo');
+    const pricingMulti = document.getElementById('pricing-multi');
+    const labelSolo = document.getElementById('label-solo');
+    const labelMulti = document.getElementById('label-multi');
+    
+    if (pricingToggle && pricingSolo && pricingMulti) {
+        // Set initial state
+        labelSolo.classList.add('active');
+        
+        pricingToggle.addEventListener('change', function() {
+            if (this.checked) {
+                // Show Multi, Hide Solo
+                pricingSolo.style.display = 'none';
+                pricingMulti.style.display = 'grid';
+                labelSolo.classList.remove('active');
+                labelMulti.classList.add('active');
+            } else {
+                // Show Solo, Hide Multi
+                pricingSolo.style.display = 'grid';
+                pricingMulti.style.display = 'none';
+                labelSolo.classList.add('active');
+                labelMulti.classList.remove('active');
+            }
+        });
+    }
+    
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
