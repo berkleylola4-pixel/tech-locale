@@ -253,8 +253,29 @@ a {
     background-image: url('https://images.pexels.com/photos/37730212/pexels-photo-37730212.jpeg?auto=compress&cs=tinysrgb&w=1920');
     background-size: cover;
     background-position: center;
-    opacity: 0.15;
+    opacity: 0.08;
     z-index: 0;
+}
+
+/* Floating particles */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 86, 179, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 86, 179, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 40% 40%, rgba(0, 198, 102, 0.06) 0%, transparent 30%);
+    animation: floatBg 8s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes floatBg {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, 20px); }
 }
 
 .hero-content {
@@ -474,12 +495,29 @@ a {
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--primary);
+    transition: height 0.4s ease;
 }
 
 .service-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
     border-color: var(--primary);
+}
+
+.service-card:hover::before {
+    height: 100%;
 }
 
 .service-icon {
@@ -565,6 +603,20 @@ a {
 .pricing-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.pricing-card .price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1;
+    transition: var(--transition);
+}
+
+.pricing-card:hover .price {
+    color: var(--primary);
+    transform: scale(1.05);
 }
 
 .pricing-card.featured {
@@ -874,6 +926,12 @@ input:checked + .slider:before {
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 8px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 .stat-label {
