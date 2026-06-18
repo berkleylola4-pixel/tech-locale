@@ -641,6 +641,18 @@ a {
     color: var(--text-dark);
 }
 
+.pricing-section-title {
+    text-align: center;
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+}
+
+.pricing-section-title h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
 /* About Section */
 .about {
     padding: 100px 0;
