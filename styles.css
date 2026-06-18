@@ -1056,7 +1056,17 @@ a {
     }
     
     .hero-visual {
-        display: none;
+        display: block;
+        height: 300px;
+        margin-top: 40px;
+    }
+    
+    .hero-image {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        border-radius: var(--radius-md);
     }
     
     .services-grid,
@@ -1099,6 +1109,10 @@ a {
     
     .hero {
         padding: 120px 0 60px;
+    }
+    
+    .hero-visual {
+        height: 250px;
     }
     
     .services-grid,
